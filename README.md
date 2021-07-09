@@ -38,7 +38,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Git for windows](https://git-scm.com/downloads/)
 - [Wget for git bash](https://eternallybored.org/misc/wget/)
 - [EXPR para expressões](https://guialinux.uniriotec.br/expr/)
-- Terminal Ubuntu
+- [Terminal Ubuntu](https://help.ubuntu.com/kubuntu/desktopguide/pt_BR/terminals.html)
 
 ### Autor
 
