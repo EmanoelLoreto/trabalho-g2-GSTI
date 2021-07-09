@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Dia da Semana"",""Soja Monitorada"",""Umidade Solo"",""Tamanho da Planta(cm)"",""Temperatura"",""Umidade do Ar"",""Vento"",""Temp. Max"",""Temp. Min"",""Precipitação"",""Precisa irrigar?" > pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "Dia da Semana"",""Soja Monitorada"",""Umidade Solo"",""Tamanho da Planta(cm)"",""Temperatura"",""Umidade do Ar"",""Vento"",""Temp. Max"",""Temp. Min"",""Precipitação"",""Precisa irrigar?" > pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 result=$(wget -qO- http://fpuntel.000webhostapp.com/soja/previsaoTempo.php)
 diasSemana=(`echo $result | cut -c 1-3` `echo $result | cut -c 13-15` `echo $result | cut -c 25-27` `echo $result | cut -c 37-39` `echo $result | cut -c 49-51` `echo $result | cut -c 61-63` `echo $result | cut -c 73-75`)
@@ -29,31 +29,31 @@ previsaoDomSoja1=(`echo $result | cut -c 77-78` `echo $result | cut -c 80-81` `e
 
 #Soja 1 seg
 if [ ${previsaoSegSoja1[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[0]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSegSoja1[0]}"",""${previsaoSegSoja1[1]}"",""${previsaoSegSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[0]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSegSoja1[0]}"",""${previsaoSegSoja1[1]}"",""${previsaoSegSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 1 ter
 if [ ${previsaoTerSoja1[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[1]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoTerSoja1[0]}"",""${previsaoTerSoja1[1]}"",""${previsaoTerSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[1]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoTerSoja1[0]}"",""${previsaoTerSoja1[1]}"",""${previsaoTerSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 1 qua
 if [ ${previsaoTerSoja1[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[2]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuaSoja1[0]}"",""${previsaoQuaSoja1[1]}"",""${previsaoQuaSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[2]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuaSoja1[0]}"",""${previsaoQuaSoja1[1]}"",""${previsaoQuaSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 1 qui
 if [ ${previsaoQuiSoja1[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[3]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuiSoja1[0]}"",""${previsaoQuiSoja1[1]}"",""${previsaoQuiSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[3]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuiSoja1[0]}"",""${previsaoQuiSoja1[1]}"",""${previsaoQuiSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 1 sex
 if [ ${previsaoSexSoja1[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[4]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSexSoja1[0]}"",""${previsaoSexSoja1[1]}"",""${previsaoSexSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[4]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSexSoja1[0]}"",""${previsaoSexSoja1[1]}"",""${previsaoSexSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 1 sab
 if [ ${previsaoSabSoja1[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[5]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSabSoja1[0]}"",""${previsaoSabSoja1[1]}"",""${previsaoSabSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[5]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSabSoja1[0]}"",""${previsaoSabSoja1[1]}"",""${previsaoSabSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 1 dom
 if [ ${previsaoDomSoja1[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[6]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoDomSoja1[0]}"",""${previsaoDomSoja1[1]}"",""${previsaoDomSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[6]}"",""1"",""${soja1[0]}"",""${soja1[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoDomSoja1[0]}"",""${previsaoDomSoja1[1]}"",""${previsaoDomSoja1[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 # Informações da soja
 # Ex: 59,11
@@ -79,31 +79,31 @@ previsaoDomSoja2=(`echo $result | cut -c 77-78` `echo $result | cut -c 80-81` `e
 
 #Soja 2 seg
 if [ ${previsaoSegSoja2[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[0]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSegSoja2[0]}"",""${previsaoSegSoja2[1]}"",""${previsaoSegSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[0]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSegSoja2[0]}"",""${previsaoSegSoja2[1]}"",""${previsaoSegSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 2 ter
 if [ ${previsaoTerSoja2[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[1]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoTerSoja2[0]}"",""${previsaoTerSoja2[1]}"",""${previsaoTerSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[1]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoTerSoja2[0]}"",""${previsaoTerSoja2[1]}"",""${previsaoTerSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 2 qua
 if [ ${previsaoTerSoja2[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[2]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuaSoja2[0]}"",""${previsaoQuaSoja2[1]}"",""${previsaoQuaSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[2]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuaSoja2[0]}"",""${previsaoQuaSoja2[1]}"",""${previsaoQuaSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 2 qui
 if [ ${previsaoQuiSoja2[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[3]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuiSoja2[0]}"",""${previsaoQuiSoja2[1]}"",""${previsaoQuiSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[3]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuiSoja2[0]}"",""${previsaoQuiSoja2[1]}"",""${previsaoQuiSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 2 sex
 if [ ${previsaoSexSoja2[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[4]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSexSoja2[0]}"",""${previsaoSexSoja2[1]}"",""${previsaoSexSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[4]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSexSoja2[0]}"",""${previsaoSexSoja2[1]}"",""${previsaoSexSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 2 sab
 if [ ${previsaoSabSoja2[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[5]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSabSoja2[0]}"",""${previsaoSabSoja2[1]}"",""${previsaoSabSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[5]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSabSoja2[0]}"",""${previsaoSabSoja2[1]}"",""${previsaoSabSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 2 dom
 if [ ${previsaoDomSoja2[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[6]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoDomSoja2[0]}"",""${previsaoDomSoja2[1]}"",""${previsaoDomSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[6]}"",""2"",""${soja2[0]}"",""${soja2[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoDomSoja2[0]}"",""${previsaoDomSoja2[1]}"",""${previsaoDomSoja2[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 # Informações da soja
 # Ex: 59,11
@@ -129,31 +129,31 @@ previsaoDomSoja3=(`echo $result | cut -c 77-78` `echo $result | cut -c 80-81` `e
 
 #Soja 3 seg
 if [ ${previsaoSegSoja3[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[0]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSegSoja3[0]}"",""${previsaoSegSoja3[1]}"",""${previsaoSegSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[0]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSegSoja3[0]}"",""${previsaoSegSoja3[1]}"",""${previsaoSegSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 3 ter
 if [ ${previsaoTerSoja3[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[1]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoTerSoja3[0]}"",""${previsaoTerSoja3[1]}"",""${previsaoTerSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[1]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoTerSoja3[0]}"",""${previsaoTerSoja3[1]}"",""${previsaoTerSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 3 qua
 if [ ${previsaoTerSoja3[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[2]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuaSoja3[0]}"",""${previsaoQuaSoja3[1]}"",""${previsaoQuaSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[2]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuaSoja3[0]}"",""${previsaoQuaSoja3[1]}"",""${previsaoQuaSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 3 qui
 if [ ${previsaoQuiSoja3[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[3]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuiSoja3[0]}"",""${previsaoQuiSoja3[1]}"",""${previsaoQuiSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[3]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoQuiSoja3[0]}"",""${previsaoQuiSoja3[1]}"",""${previsaoQuiSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 3 sex
 if [ ${previsaoSexSoja3[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[4]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSexSoja3[0]}"",""${previsaoSexSoja3[1]}"",""${previsaoSexSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[4]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSexSoja3[0]}"",""${previsaoSexSoja3[1]}"",""${previsaoSexSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 3 sab
 if [ ${previsaoSabSoja3[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[5]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSabSoja3[0]}"",""${previsaoSabSoja3[1]}"",""${previsaoSabSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[5]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoSabSoja3[0]}"",""${previsaoSabSoja3[1]}"",""${previsaoSabSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 #Soja 3 dom
 if [ ${previsaoDomSoja3[2]} -ge 5 ]; then irrigar=`echo Sim`; else irrigar=`echo Não`; fi
-echo "${diasSemana[6]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoDomSoja3[0]}"",""${previsaoDomSoja3[1]}"",""${previsaoDomSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "${diasSemana[6]}"",""3"",""${soja3[0]}"",""${soja3[1]}"",""${estacaoMeteorologica[0]}"",""${estacaoMeteorologica[1]}"",""${estacaoMeteorologica[2]}"",""${previsaoDomSoja3[0]}"",""${previsaoDomSoja3[1]}"",""${previsaoDomSoja3[2]}"",""$irrigar" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
 # Somar todos e dividir pela quantidade de elementos afim de conseguir a média
 tempMaxMedia=0
@@ -178,7 +178,7 @@ tempMaxMedia=`expr $tempMaxMedia + ${previsaoQuiSoja3[0]}`
 tempMaxMedia=`expr $tempMaxMedia + ${previsaoSexSoja3[0]}`
 tempMaxMedia=`expr $tempMaxMedia + ${previsaoSabSoja3[0]}`
 tempMaxMedia=`expr $tempMaxMedia + ${previsaoDomSoja3[0]}`
-tempMaxMedia=`expr $tempMaxMedia / 18`
+tempMaxMedia=`expr $tempMaxMedia / 21`
 
 # Somar todos e dividir pela quantidade de elementos afim de conseguir a média
 tempMinMedia=0
@@ -203,7 +203,7 @@ tempMinMedia=`expr $tempMinMedia + ${previsaoQuiSoja3[1]}`
 tempMinMedia=`expr $tempMinMedia + ${previsaoSexSoja3[1]}`
 tempMinMedia=`expr $tempMinMedia + ${previsaoSabSoja3[1]}`
 tempMinMedia=`expr $tempMinMedia + ${previsaoDomSoja3[1]}`
-tempMinMedia=`expr $tempMinMedia / 18`
+tempMinMedia=`expr $tempMinMedia / 21`
 
 # Somar todos e dividir pela quantidade de elementos afim de conseguir a média
 precipitacaoMedia=0
@@ -228,13 +228,13 @@ precipitacaoMedia=`expr $precipitacaoMedia + ${previsaoQuiSoja3[2]}`
 precipitacaoMedia=`expr $precipitacaoMedia + ${previsaoSexSoja3[2]}`
 precipitacaoMedia=`expr $precipitacaoMedia + ${previsaoSabSoja3[2]}`
 precipitacaoMedia=`expr $precipitacaoMedia + ${previsaoDomSoja3[2]}`
-precipitacaoMedia=`expr $precipitacaoMedia / 18`
+precipitacaoMedia=`expr $precipitacaoMedia / 21`
 	 
-echo "Média da Temperatura Máxima: $tempMaxMedia" > soja$(date +"%d-%m-%Y-%H:%M").txt
-echo "Média da Temperatura Mínima: $tempMinMedia" >> soja$(date +"%d-%m-%Y-%H:%M").txt
-echo "Média da Precipitação: $precipitacaoMedia" >> soja$(date +"%d-%m-%Y-%H:%M").txt
+echo "Média da Temperatura Máxima: $tempMaxMedia" > soja$(date +"%d-%m-%Y-%H").txt
+echo "Média da Temperatura Mínima: $tempMinMedia" >> soja$(date +"%d-%m-%Y-%H").txt
+echo "Média da Precipitação: $precipitacaoMedia" >> soja$(date +"%d-%m-%Y-%H").txt
 
-echo "" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
 
-echo "Média da Temperatura Máxima"",""Média da Temperatura Mínima"",""Média da Precipitação" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
-echo "$tempMaxMedia"",""$tempMinMedia"",""$precipitacaoMedia" >> pontosSoja$(date +"%d-%m-%Y-%H:%M").csv
+echo "Média da Temperatura Máxima"",""Média da Temperatura Mínima"",""Média da Precipitação" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
+echo "$tempMaxMedia"",""$tempMinMedia"",""$precipitacaoMedia" >> pontosSoja$(date +"%d-%m-%Y-%H").csv
